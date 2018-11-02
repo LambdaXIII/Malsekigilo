@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>MainContent.qml</file>
+        <file>MainContentForm.ui.qml</file>
+        <file>Switcher.qml</file>
+        <file>SwitcherForm.ui.qml</file>
     </qresource>
 </RCC>
