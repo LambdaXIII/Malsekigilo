@@ -42,6 +42,7 @@ Item {
 
         Item {
             id: buttonArea
+            clip: true
             anchors.rightMargin: 4
             anchors.leftMargin: 4
             anchors.bottomMargin: 4
@@ -51,9 +52,10 @@ Item {
             Rectangle {
                 id: button
                 y: 0
-                width: parent.width / 3
+                width: parent.width / 4
                 height: parent.height
-                radius: 10
+                radius: 5
+                clip: false
                 gradient: Gradient {
                     GradientStop {
                         position: 0
@@ -74,8 +76,6 @@ Item {
                         position: 1
                         color: "#828282"
                     }
-
-
                 }
                 z: 2
                 border.color: "#000000"
@@ -86,15 +86,12 @@ Item {
                     anchors.fill: parent
                 }
             }
-
         }
-
     }
 }
 
 
 /*##^## Designer {
-    D{i:28;anchors_height:100;anchors_width:100}D{i:11;anchors_height:200;anchors_width:200;anchors_x:93;anchors_y:107}
-D{i:1;anchors_height:200;anchors_width:200;anchors_x:48;anchors_y:105}
+    D{i:11;anchors_height:200;anchors_width:200;anchors_x:93;anchors_y:107}D{i:1;anchors_height:200;anchors_width:200;anchors_x:48;anchors_y:105}
 }
  ##^##*/

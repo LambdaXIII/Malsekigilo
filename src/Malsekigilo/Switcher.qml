@@ -1,52 +1,65 @@
 import QtQuick 2.4
 import QtGraphicalEffects 1.0
 import QtQuick.Controls 2.4
+import Malsekigilo.Core 1.0
 
 SwitcherForm {
 
-    property int buttonState: -1
-    property bool isGoingRight: true
+    property int buttonState: MachineCore.Off
+
+    //    property bool isGoingRight: true
+    signal stateChanged(int s)
 
     mouseArea.onClicked: {
-        if (buttonState != 0) {
-            root.state = "CENTER"
-            buttonState = 0
-        } else {
-            if (isGoingRight) {
-                root.state = "RIGHT"
-                isGoingRight = false
-                buttonState = 1
-            } else {
-                root.state = "LEFT"
-                isGoingRight = true
-                buttonState = -1
-            }
+        if (buttonState == MachineCore.Off) {
+            root.state = "LOW"
+            buttonState = MachineCore.Low
+        } else if (buttonState == MachineCore.Low) {
+            root.state = "MEDIUM"
+            buttonState = MachineCore.Medium
+        } else if (buttonState == MachineCore.Medium) {
+            root.state = "HIGH"
+            buttonState = MachineCore.High
+        } else if (buttonState == MachineCore.High) {
+            root.state = "OFF"
+            buttonState = MachineCore.Off
         }
+        MachineCore.flowLevel = buttonState
+        stateChanged(buttonState)
     }
 
     states: [
         State {
-            name: "LEFT"
+            name: "OFF"
             PropertyChanges {
                 target: button
                 x: 0
             }
         },
         State {
-            name: "CENTER"
+            name: "LOW"
             PropertyChanges {
                 target: button
                 x: {
-                    (buttonArea.width - button.width) / 2
+                    buttonArea.width / 4
                 }
             }
         },
         State {
-            name: "RIGHT"
+            name: "MEDIUM"
             PropertyChanges {
                 target: button
                 x: {
-                    buttonArea.width - button.width
+                    buttonArea.width / 2
+                }
+            }
+        },
+        State {
+            name: "HIGH"
+            PropertyChanges {
+                target: button
+                x: {
+                    buttonArea.width * 3 / 4
                 }
             }
         }
@@ -58,8 +71,8 @@ SwitcherForm {
             NumberAnimation {
                 target: button
                 property: "x"
-                duration: 1000
-                easing.type: Easing.InOutQuad
+                duration: 800
+                easing.type: Easing.InOutSine
             }
         }
     ]
