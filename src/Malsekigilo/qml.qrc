@@ -5,5 +5,7 @@
         <file>MainContentForm.ui.qml</file>
         <file>Switcher.qml</file>
         <file>SwitcherForm.ui.qml</file>
+        <file>WetMeter.qml</file>
+        <file>WetMeterForm.ui.qml</file>
     </qresource>
 </RCC>

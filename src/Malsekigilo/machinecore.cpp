@@ -8,7 +8,7 @@ MachineCore::MachineCore(QObject *parent) : QObject(parent)
 {
   m_mainTimer = new QTimer(this);
   m_wetPercent = 50;
-
+  m_wetGate = candy::createNumberGate<qreal>(0, 100);
 //  connect(m_mainTimer, &QTimer::timeout, this, &MachineCore::wetDecrease);
 //  connect(m_mainTimer, &QTimer::timeout, this, &MachineCore::wetIncrease);
   connect(m_mainTimer, &QTimer::timeout, this, &MachineCore::tick);
@@ -74,7 +74,7 @@ void MachineCore::setWetPercent(qreal x)
 {
   QMutexLocker locker(&m_wetPercentMutex);
 
-  qreal filteredX = candy::positiveGate(x);
+  qreal filteredX = m_wetGate(x);
   if (! candy::compareQReal(filteredX, m_wetPercent)) {
     m_wetPercent = x;
     emit wetPercentChanged(x);

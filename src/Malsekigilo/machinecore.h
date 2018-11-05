@@ -5,6 +5,7 @@
 #include "candy_macros.h"
 #include <QTimer>
 #include <QBasicMutex>
+#include <functional>
 
 class MachineCore : public QObject
 {
@@ -45,6 +46,8 @@ protected:
 
   qreal m_wetPercent;
   QMutex m_wetPercentMutex;
+
+  std::function<qreal(qreal)> m_wetGate;
 
   static QMap<MachineCore::Level, qreal> m_increaseMap;
   static QMap<MachineCore::Level, qreal> m_increaseDelta;

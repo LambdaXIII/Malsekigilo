@@ -10,4 +10,9 @@ MainContentForm {
     light.active: switcher.buttonState != MachineCore.Off
 
     debugText.text: MachineCore.wetPercentText
+
+    wetMeter.percent: MachineCore.wetPercent
+
+    setToNinty.onClicked: MachineCore.wetPercent = 90
+    setToTen.onClicked: MachineCore.wetPercent = 10
 }
