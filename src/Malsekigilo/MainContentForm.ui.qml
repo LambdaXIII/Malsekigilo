@@ -3,65 +3,87 @@ import QtQuick.Extras 1.4
 import QtQuick.Controls 2.3
 
 Item {
+    id: root
     width: 400
     height: 400
-    property alias setToTen: setToTen
-    property alias setToNinty: setToNinty
-    property alias wetMeter: wetMeter
-    property alias debugText: debugText
+    property alias gauge: gauge
+    property alias digitalBox: digitalBox
+    property alias root: root
     property alias light: light
     property alias switcher: switcher
 
     Switcher {
         id: switcher
-        x: 46
-        y: 305
-        width: 309
+        x: 201
+        y: 307
+        width: 191
         height: 29
+        anchors.verticalCenter: light.verticalCenter
+        anchors.right: parent.right
+        anchors.rightMargin: 8
     }
 
     StatusIndicator {
         id: light
-        x: 43
-        y: 267
+        y: 326
         color: "#39990b"
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 28
+        anchors.left: parent.left
+        anchors.leftMargin: 32
     }
 
-    Text {
-        id: debugText
-        x: 84
-        y: 148
-        width: 236
-        height: 104
-        text: qsTr("Text")
-        font.family: "Times New Roman"
-        renderType: Text.NativeRendering
-        font.pixelSize: 28
+    DigitalBox {
+        id: digitalBox
+        x: 248
+        width: 144
+        height: 42
+        anchors.right: parent.right
+        anchors.rightMargin: 8
+        anchors.top: parent.top
+        anchors.topMargin: 28
     }
 
-    WetMeter {
-        id: wetMeter
-        x: 92
-        y: 270
-        width: 260
-        height: 25
+    Gauge {
+        id: gauge
+        anchors.bottom: light.top
+        anchors.bottomMargin: 8
+        anchors.left: parent.left
+        anchors.leftMargin: 8
+        anchors.top: parent.top
+        anchors.topMargin: 28
     }
 
-    Button {
-        id: setToTen
-        x: 220
-        y: 204
-        width: 64
-        height: 40
-        text: qsTr("10%")
-    }
+    Rectangle {
+        id: rectangle
+        gradient: Gradient {
+            GradientStop {
+                position: 0
+                color: "#a9a9a9"
+            }
 
-    Button {
-        id: setToNinty
-        x: 294
-        y: 204
-        width: 51
-        height: 40
-        text: qsTr("90%")
+            GradientStop {
+                position: 0.086
+                color: "#868686"
+            }
+
+            GradientStop {
+                position: 0.925
+                color: "#4d4d4d"
+            }
+
+            GradientStop {
+                position: 1
+                color: "#3b3b3b"
+            }
+        }
+        anchors.fill: parent
+        z: -10
     }
 }
+
+
+/*##^## Designer {
+    D{i:1;anchors_width:191;anchors_x:201}D{i:2;anchors_x:32}D{i:10;anchors_x:8;anchors_y:8}
+}
+ ##^##*/

@@ -7,5 +7,9 @@
         <file>SwitcherForm.ui.qml</file>
         <file>WetMeter.qml</file>
         <file>WetMeterForm.ui.qml</file>
+        <file>CheatTools.qml</file>
+        <file>CheatToolsForm.ui.qml</file>
+        <file>DigitalBox.qml</file>
+        <file>DigitalBoxForm.ui.qml</file>
     </qresource>
 </RCC>

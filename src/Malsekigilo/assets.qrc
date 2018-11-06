@@ -3,5 +3,15 @@
         <file>pics/smalllight_off.png</file>
         <file>pics/smalllight_on.png</file>
         <file>pics/NumberTie.png</file>
+        <file>pics/Num0.png</file>
+        <file>pics/Num1.png</file>
+        <file>pics/Num2.png</file>
+        <file>pics/Num3.png</file>
+        <file>pics/Num4.png</file>
+        <file>pics/Num5.png</file>
+        <file>pics/Num6.png</file>
+        <file>pics/Num7.png</file>
+        <file>pics/Num8.png</file>
+        <file>pics/Num9.png</file>
     </qresource>
 </RCC>

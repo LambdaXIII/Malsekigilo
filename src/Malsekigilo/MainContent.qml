@@ -6,13 +6,11 @@ MainContentForm {
     Component.onCompleted: {
         MachineCore.startTimer()
     }
+    clip: true
 
     light.active: switcher.buttonState != MachineCore.Off
 
-    debugText.text: MachineCore.wetPercentText
+    gauge.value: MachineCore.wetPercent
 
-    wetMeter.percent: MachineCore.wetPercent
-
-    setToNinty.onClicked: MachineCore.wetPercent = 90
-    setToTen.onClicked: MachineCore.wetPercent = 10
+    digitalBox.currentValue: MachineCore.wetPercent
 }

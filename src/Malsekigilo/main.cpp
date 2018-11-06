@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include "machinecore.h"
+#include "numbermetercore.h"
 
 int main(int argc, char *argv[])
 {
@@ -12,6 +13,7 @@ int main(int argc, char *argv[])
   app.setApplicationVersion("0.1-alpha");
 
   MachineCore::registerToEngine();
+  NumberMeterCore::registerToEngine();
 
   QQmlApplicationEngine engine;
   engine.load(QUrl(QStringLiteral("qrc:/main.qml")));

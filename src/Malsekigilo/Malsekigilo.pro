@@ -15,7 +15,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
     machinecore.cpp \
-    candyhandy.cpp
+    candyhandy.cpp \
+    appcore.cpp \
+    numbermetercore.cpp
 
 RESOURCES += qml.qrc \
     assets.qrc
@@ -34,4 +36,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     machinecore.h \
     candy_macros.h \
-    candyhandy.h
+    candyhandy.h \
+    appcore.h \
+    numbermetercore.h

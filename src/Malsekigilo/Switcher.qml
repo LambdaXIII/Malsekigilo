@@ -28,6 +28,15 @@ SwitcherForm {
         stateChanged(buttonState)
     }
 
+    mouseArea.onDoubleClicked: {
+        if (buttonState != MachineCore.Off) {
+            root.state = "Off"
+            buttonState = MachineCore.Off
+            MachineCore.flowLevel = buttonState
+            stateChanged(buttonState)
+        }
+    }
+
     states: [
         State {
             name: "OFF"
