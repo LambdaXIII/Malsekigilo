@@ -41,6 +41,15 @@ void MachineCore::registerToEngine()
 //  qmlRegisterType<MachineCore::Level>("Malsekigilo.Core", 1, 0, "Level");
 }
 
+qreal MachineCore::valueGate(qreal x)
+{
+  if (x > 100)
+    return 100;
+  if (x < 0)
+    return 0;
+  return x;
+}
+
 QMap<MachineCore::Level, qreal> MachineCore::m_increaseMap = {
   {MachineCore::Off, 0},
   {MachineCore::Low, 0.1},
@@ -74,7 +83,7 @@ void MachineCore::setWetPercent(qreal x)
 {
   QMutexLocker locker(&m_wetPercentMutex);
 
-  qreal filteredX = m_wetGate(x);
+  qreal filteredX = valueGate(x);
   if (! candy::compareQReal(filteredX, m_wetPercent)) {
     m_wetPercent = x;
     emit wetPercentChanged(x);

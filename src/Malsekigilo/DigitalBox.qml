@@ -12,6 +12,12 @@ DigitalBoxForm {
         }
     }
 
+    FontLoader {
+        id: digitalFont
+        source: "qrc:/fonts/digigraphics.ttf"
+    }
+    digitText.font: digitalFont.name
+
     //    onDisplayValueChanged: {
     //        digitText.text = displayValue.toString()
 

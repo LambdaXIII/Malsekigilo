@@ -20,20 +20,20 @@ Item {
         id: digitText
         color: "#ffffff"
         text: qsTr("100.99%")
+        font.pixelSize: height
         font.family: "Arial"
         anchors.rightMargin: 8
         anchors.leftMargin: 8
         anchors.bottomMargin: 8
         anchors.topMargin: 8
-        font.pixelSize: 30
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignRight
         anchors.fill: parent
     }
 }
 
-
 /*##^## Designer {
     D{i:1;anchors_height:200;anchors_width:200;anchors_x:127;anchors_y:125}
 }
  ##^##*/
+

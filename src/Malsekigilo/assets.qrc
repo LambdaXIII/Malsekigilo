@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/assets">
+    <qresource prefix="/">
         <file>pics/smalllight_off.png</file>
         <file>pics/smalllight_on.png</file>
         <file>pics/NumberTie.png</file>
@@ -13,5 +13,6 @@
         <file>pics/Num7.png</file>
         <file>pics/Num8.png</file>
         <file>pics/Num9.png</file>
+        <file>fonts/digigraphics.ttf</file>
     </qresource>
 </RCC>

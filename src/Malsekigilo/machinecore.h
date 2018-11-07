@@ -49,6 +49,8 @@ protected:
 
   std::function<qreal(qreal)> m_wetGate;
 
+  static qreal valueGate(qreal x);
+
   static QMap<MachineCore::Level, qreal> m_increaseMap;
   static QMap<MachineCore::Level, qreal> m_increaseDelta;
   static int m_tickTime;
