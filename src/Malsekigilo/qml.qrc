@@ -11,5 +11,6 @@
         <file>CheatToolsForm.ui.qml</file>
         <file>DigitalBox.qml</file>
         <file>DigitalBoxForm.ui.qml</file>
+        <file>StyledGauge.qml</file>
     </qresource>
 </RCC>

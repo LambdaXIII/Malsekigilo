@@ -44,16 +44,6 @@ Item {
         anchors.topMargin: 28
     }
 
-    Gauge {
-        id: gauge
-        anchors.bottom: light.top
-        anchors.bottomMargin: 8
-        anchors.left: parent.left
-        anchors.leftMargin: 8
-        anchors.top: parent.top
-        anchors.topMargin: 28
-    }
-
     Rectangle {
         id: rectangle
         gradient: Gradient {
@@ -80,10 +70,22 @@ Item {
         anchors.fill: parent
         z: -10
     }
+
+    StyledGauge {
+        id: gauge
+        width: 53
+        anchors.bottom: light.top
+        anchors.bottomMargin: 8
+        anchors.left: parent.left
+        anchors.leftMargin: 8
+        anchors.top: parent.top
+        anchors.topMargin: 28
+    }
 }
 
 
 /*##^## Designer {
     D{i:1;anchors_width:191;anchors_x:201}D{i:2;anchors_x:32}D{i:10;anchors_x:8;anchors_y:8}
+D{i:11;anchors_height:306;anchors_x:11;anchors_y:28}
 }
  ##^##*/

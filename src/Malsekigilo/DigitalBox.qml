@@ -16,7 +16,7 @@ DigitalBoxForm {
         id: digitalFont
         source: "qrc:/fonts/digigraphics.ttf"
     }
-    digitText.font: digitalFont.name
+    digitText.font.family: digitalFont.name
 
     //    onDisplayValueChanged: {
     //        digitText.text = displayValue.toString()
@@ -43,7 +43,7 @@ DigitalBoxForm {
         id: numberAnimation
         property: "displayValue"
         target: root
-        duration: 500
+        duration: 2800
         easing.type: Easing.InOutQuad
     }
 }
